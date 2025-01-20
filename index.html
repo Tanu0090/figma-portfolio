@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanu Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: rgba(52, 152, 219, 0.9);
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .sidebar h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 18px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #1abc9c;
+            transform: translateX(5px);
+        }
+
+        .content {
+            margin-left: 20%;
+            padding: 20px;
+            animation: fadeInRight 1s ease-in-out;
+        }
+
+        .project {
+            background: linear-gradient(135deg, #ecf0f1, #ffffff);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .project:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .project:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .project:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .project:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .project h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .project p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #7f8c8d;
+        }
+
+        .project img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s, text-decoration 0.3s;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+
+        .project a:hover {
+            color: #1abc9c;
+            text-decoration: underline;
+        }
+
+        .project a::after {
+            content: ' ➔';
+            font-size: 18px;
+            position: absolute;
+            right: -20px;
+            top: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project a:hover::after {
+            opacity: 1;
+        }
+
+        .project:last-child {
+            margin-bottom: 50px;
+        }
+
+        .project#contact {
+            background-color: #f7f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project#contact a {
+            color: #1abc9c;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Tanu</h1>
+        <h3>Web Portfolio for Designing</h3>
+        <a href="#project1">Swiggy</a>
+        <a href="#project2">Decofy App</a>
+        <a href="#project3">Business Website</a>
+        <a href="#project4">Sarthi</a>
+        <a href="#project5">Music App</a>
+        <a href="#contact">Contact Me</a>
+    </div>
+
+    <div class="content">
+        <div class="project" id="project1">
+            <h2>Project 1: Swiggy</h2>
+            <p>Designed a mobile-friendly version of Swiggy’s homepage with improved navigation and usability.</p>
+            <a href="https://www.figma.com/design/LXjs4DhCrIAyP2F4BdtOBm/secondproject?node-id=68-102&t=7IzjlKHleH6GyOWK-1" target="_blank">View Project</a>
+        </div>
+
+        <div class="project" id="project2">
+            <h2>Project 2: Decofy App</h2>
+            <p>Mobile Interface of decoration app for different types of events and customize with person number.</p>
+            <a href="https://www.figma.com/design/DlPqRdd5wbao0Vdo9iUuQR/Decofy?node-id=0-1&t=0FZkL0oKSU80I4yI-1" target="_blank">View Project</a>
+        </div>
+
+        <div class="project" id="project3">
+            <h2>Project 3: Business Website</h2>
+            <p>Designed a responsive business website with service pages, interactive contact forms, and dynamic elements for seamless user experience.</p>
+            <a href="https://www.figma.com/design/UKtkPjI7Nb6oJ1Jk0eop9Q/Business-we..?t=0FZkL0oKSU80I4yI-1" target="_blank">View Project</a>
+        </div>
+
+        <div class="project" id="project4">
+            <h2>Project 4: Sarthi</h2>
+            <p>Sarthi is an intuitive doubt-solving platform connecting users to experts, fostering clarity and enhancing knowledge through seamless interaction.</p>
+            <a href="https://www.figma.com/design/fIiwRNNTX3AF2G4Twsh1eh/first-project?node-id=0-1&t=Y3ILyOLaVsinfFnw-1" target="_blank">View Project</a>
+        </div>
+
+        <div class="project" id="project5">
+            <h2>Project 5: Music App</h2>
+            <p>A music app offers a personalized, seamless experience for discovering, streaming, and sharing your favorite songs and artists.</p>
+            <a href="https://www.figma.com/design/bnQogaE2B6pKN4zYokHuOU/music-app-(Community)?node-id=0-1&t=Ed5x8ShfiSDsAOSV-1" target="_blank">View Project</a>
+        </div>
+
+        <div class="project" id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:tanumalik088@gmail.com">tanumalik088@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/tanu-malik-a2322820b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Click Here</a></p>
+        </div>
+    </div>
+</body>
+</html>
